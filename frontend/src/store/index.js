@@ -3,6 +3,7 @@ import thunk from 'redux-thunk';
 const rootReducer = combineReducers({
 });
 
+
 let enhancer;
 
 if (process.env.NODE_ENV === "production") {
@@ -17,5 +18,7 @@ if (process.env.NODE_ENV === "production") {
 const configureStore = (preloadedState) => {
   return createStore(rootReducer, preloadedState, enhancer);
 };
+
+
 
 export default configureStore;
