@@ -1,0 +1,14 @@
+'use strict';
+module.exports = (sequelize, DataTypes) => {
+  const Group = sequelize.define('Group', {
+    location: DataTypes.STRING,
+    groupImage: DataTypes.STRING,
+    titleName: DataTypes.STRING,
+    groupVisibility: DataTypes.STRING,
+    description: DataTypes.STRING
+  }, {});
+  Group.associate = function(models) {
+    // associations can be defined here
+  };
+  return Group;
+};

@@ -30,6 +30,41 @@ module.exports = (sequelize, DataTypes) => {
         len: [60, 60]
       },
     },
+    firstName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [4, 30],
+      },
+    },
+    lastName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [4, 30],
+      },
+    },
+    profileImage: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      validate: {
+        len: [1, 256],
+      },
+    },
+    locationName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [2, 30],
+      },
+    },
+    phoneNumber: {
+      type: DataTypes.NUMBER,
+      allowNull: true,
+      validate: {
+        len: [10, 10],
+      },
+    },
   }, 
   {
     defaultScope: {
@@ -48,6 +83,13 @@ module.exports = (sequelize, DataTypes) => {
   });
   User.associate = function (models) {
     // associations can be defined here
+    User.hasMany(models.Member, {foreignKey:"memberId"});
+    const columnMapping = {
+      through: 'Attendee',
+      otherKey: 'eventId',
+      foreignKey: 'userId'
+    }
+    User.hasMany(models.Comment, {foreignKey:"commentId"});
   };
   User.prototype.toSafeObject = function() { // remember, this cannot be an arrow function
     const { id, username, email } = this; // context will be the User instance

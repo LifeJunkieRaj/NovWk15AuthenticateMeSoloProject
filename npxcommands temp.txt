@@ -1,0 +1,20 @@
+npx sequelize model:generate --name Group --attributes location:string,groupImage:string,titleName:string,groupVisibility:string,description:string
+
+npx sequelize model:generate --name Meat --attributes meatName:string
+
+npx sequelize model:generate --name Cuisine --attributes cuisineType:string
+
+npx sequelize model:generate --name Member --attributes userId:integer,groupId:integer,organizer:boolean
+
+npx sequelize model:generate --name Event --attributes groupId:integer,eventDetails:string,eventImage:string,location:string,price:decimal,dateAndTime:date,eventImage:string,phoneNumber:integer
+
+npx sequelize model:generate --name Attendee --attributes userId:integer,eventId:integer
+
+npx sequelize model:generate --name Comment --attributes userId:integer,eventId:integer,content:string
+
+npx sequelize model:generate --name EventCuisine --attributes cuisineId:integer,eventId:integer
+
+npx sequelize model:generate --name EventMeat --attributes meatId:integer,eventId:integer
+
+npx dotenv sequelize db:migrate
+

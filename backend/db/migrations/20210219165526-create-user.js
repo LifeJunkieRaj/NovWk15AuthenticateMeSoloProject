@@ -13,6 +13,14 @@ module.exports = {
         allowNull: false,
         unique: true,
       },
+      firstName: {
+        type: Sequelize.STRING(30),
+        allowNull: false,
+      },
+      lastName: {
+        type: Sequelize.STRING(30),
+        allowNull: false,
+      },
       email: {
         type: Sequelize.STRING(256),
         allowNull: false,
@@ -21,6 +29,17 @@ module.exports = {
       hashedPassword: {
         type: Sequelize.STRING.BINARY,
         allowNull: false,
+      },
+      profileImage: {
+        type: Sequelize.STRING,
+      },
+      locationName: {
+        type: Sequelize.STRING(30),
+        allowNull: false,
+      },
+      phoneNumber: {
+        type: Sequelize.INTEGER(10),
+        unique: true,
       },
       createdAt: {
         allowNull: false,
