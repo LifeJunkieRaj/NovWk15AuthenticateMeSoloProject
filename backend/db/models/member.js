@@ -6,7 +6,9 @@ module.exports = (sequelize, DataTypes) => {
     organizer: DataTypes.BOOLEAN
   }, {});
   Member.associate = function(models) {
-    // associations can be defined here
-  };
+    // associations can be defined here 
+    Member.belongsTo(models.User, {foreignKey: "userId"});
+    Member.belongsTo(models.Group, {foreignKey: "groupId"});
+  };  
   return Member;
 };

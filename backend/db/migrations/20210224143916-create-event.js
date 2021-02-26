@@ -11,6 +11,7 @@ module.exports = {
       groupId: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        references: {model:"Groups"},
       },
       eventDetails: {
         type: Sequelize.STRING,
@@ -32,12 +33,8 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false,
       },
-      eventImage: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
       phoneNumber: {
-        type: Sequelize.NUMBER,
+        type: Sequelize.INTEGER,
         allowNull: false,
         unique: true,
       },

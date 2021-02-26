@@ -5,6 +5,12 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Meat.associate = function(models) {
     // associations can be defined here
+    const columnMappingEventMeat = {
+      through: 'EventMeat',
+      otherKey: 'eventId',
+      foreignKey: 'meatId',
+    };
+    Meat.belongsToMany(models.Event, columnMappingEventMeat);
   };
   return Meat;
 };

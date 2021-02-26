@@ -11,10 +11,12 @@ module.exports = {
       cuisineId: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        references: {model:"Cuisines"},
       },
       eventId: {
         type: Sequelize.INTEGER,
         allowNull: false,
+        references: {model:"Events"},
       },
       createdAt: {
         allowNull: false,

@@ -6,6 +6,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   EventCuisine.associate = function(models) {
     // associations can be defined here
+    EventCuisine.belongsTo(models.Cuisine, {foreignKey:"cuisineId"});
+    EventCuisine.belongsTo(models.Event, {foreignKey:"eventId"})
   };
   return EventCuisine;
 };

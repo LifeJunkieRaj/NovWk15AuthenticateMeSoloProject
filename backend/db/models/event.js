@@ -7,17 +7,35 @@ module.exports = (sequelize, DataTypes) => {
     location: DataTypes.STRING,
     price: DataTypes.DECIMAL,
     dateAndTime: DataTypes.DATE,
-    eventImage: DataTypes.STRING,
     phoneNumber: DataTypes.INTEGER
   }, {});
   Event.associate = function(models) {
     // associations can be defined here
-    Event.belongsTo(models.Group, {foreignKey:{name:"groupId"}});
-    const columnMapping = {
+    const columnMappingUser= {
+      through: 'Comment',
+      otherKey: 'userId',
+      foreignKey: 'eventId',
+    };
+    Event.belongsToMany(models.User, columnMappingUser);
+    const columnMappingEventCuisine = {
+      through: 'EventCuisine',
+      otherKey: 'cuisineId',
+      foreignKey: 'eventId',
+    };
+    Event.belongsToMany(models.Cuisine, columnMappingEventCuisine);
+    const columnMappingEventMeat = {
+      through: 'EventMeat',
+      otherKey: 'meatId',
+      foreignKey: 'eventId',
+    };
+    Event.belongsToMany(models.Meat, columnMappingEventMeat);
+    const columnMappingUser1= {
       through: 'Attendee',
       otherKey: 'userId',
       foreignKey: 'eventId',
     };
+    Event.belongsToMany(models.User, columnMappingUser1);
+    Event.hasMany(models.Comment, {foreignKey: "eventId"})
   };
   return Event;
 };
