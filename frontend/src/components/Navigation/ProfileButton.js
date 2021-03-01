@@ -29,8 +29,8 @@ function ProfileButton({ user }) {
   };
 
   return (
-    <>
-      <button onClick={openMenu}>
+    <div className="logoutContainer">
+      <button onClick={openMenu} className="logoutButton">
         <i className="fab fa-superpowers"></i>
       </button>
       {showMenu && (
@@ -42,7 +42,7 @@ function ProfileButton({ user }) {
           </li>
         </ul>
       )}
-    </>
+    </div>
   );
 }
 

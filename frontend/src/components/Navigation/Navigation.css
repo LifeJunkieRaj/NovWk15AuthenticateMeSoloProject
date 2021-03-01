@@ -1,4 +1,20 @@
-.navBarContainer {
-    background: orange;
-    padding: 30px;
+.navigationBar {
+    padding: 0px;
+}
+
+.flex-container-spaced {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    max-height: 100px;
+}
+/* .logoutButton_{
+    al
+} */
+.logoutContainer{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end;
 }

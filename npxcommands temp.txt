@@ -18,3 +18,6 @@ npx sequelize model:generate --name EventMeat --attributes meatId:integer,eventI
 
 npx dotenv sequelize db:migrate
 
+npx sequelize seed:generate --name <<table name>>
+
+npx dotenv sequelize db:seed:all

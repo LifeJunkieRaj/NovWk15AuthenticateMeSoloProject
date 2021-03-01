@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'groupId'
      }
      Group.belongsToMany(models.User, columnMappingMember);
+     Group.hasMany(models.Event,{foreignKey:{name:'groupId'}})
   };
   return Group;
 };

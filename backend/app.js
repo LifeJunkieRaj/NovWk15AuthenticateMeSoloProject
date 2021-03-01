@@ -11,6 +11,7 @@ const app = express();
 const { ValidationError } = require('sequelize');
 const routes = require('./routes');
 
+
 app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(express.json());
@@ -24,7 +25,7 @@ if (!isProduction) {
   app.use(helmet({
     contentSecurityPolicy: false
   }));
-  
+
   
   app.use(
     csurf({

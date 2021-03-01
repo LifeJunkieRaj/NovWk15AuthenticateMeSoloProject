@@ -1,5 +1,6 @@
 import Cookies from 'js-cookie';
-
+    // if there is no "method (post, put, patch, delete)" then it defaults to a "get" route
+    // Note: "get" routes do not have body because you are just requesting data
 export async function csrfFetch(url, options = {}) {
     // set options.method to 'GET' if there is no method
     options.method = options.method || "GET";

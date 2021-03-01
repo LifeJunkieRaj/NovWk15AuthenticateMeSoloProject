@@ -32,31 +32,31 @@ module.exports = (sequelize, DataTypes) => {
     },
     firstName: {
       type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [4, 30],
-      },
+      allowNull: true,
+      // validate: {
+      //   len: [4, 30],
+      // },
     },
     lastName: {
       type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [4, 30],
-      },
+      allowNull: true,
+      // validate: {
+      //   len: [4, 30],
+      // },
     },
     profileImage: {
       type: DataTypes.STRING,
       allowNull: true,
-      validate: {
-        len: [1, 256],
-      },
+      // validate: {
+      //   len: [1, 256],
+      // },
     },
     locationName: {
       type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [2, 30],
-      },
+      allowNull: true,
+      // validate: {
+      //   len: [2, 30],
+      // },
     },
     phoneNumber: {
       type: DataTypes.NUMBER,
