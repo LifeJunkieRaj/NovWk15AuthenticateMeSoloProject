@@ -49,7 +49,7 @@ function Card(props){
             {/* {imageData.images.image && 
                  
                 <div class="cardDiv"  style={{backgroundImage: `url(${imageData.images.image})`}}>   */}
-             <div class="cardDiv"  >
+             <div className="cardDiv"  >
              <h2>{props.data.eventDetails}</h2>
              <p>{props.data.location}</p>
 
@@ -64,7 +64,7 @@ else{
     let url="/groupDetailsPage/";
     return(
        
-        <div class="cardDiv"  >  
+        <div className="cardDiv"  >  
          
          <h2>{props.data.titleName}</h2>
          <p>{props.data.location}</p>

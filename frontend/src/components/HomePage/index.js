@@ -17,9 +17,8 @@ function HomePage() {
   // const [events, setEvents] = useState([]);
 
   useEffect(()=>{
-    dispatch((getTopEventsAction.getTopEvents()),[dispatch]);
-    
-  });
+    dispatch((getTopEventsAction.getTopEvents()));
+  }, [dispatch]);
     return(
         
         <div className="layout-centered" src={meetupBackground}>

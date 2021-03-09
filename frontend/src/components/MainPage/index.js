@@ -18,13 +18,9 @@ function MainPage() {
 
   useEffect(()=>{
 
-    dispatch((
-      
-        getTopGroupsAction.getTopGroups()),[dispatch]);
+    dispatch(getTopGroupsAction.getTopGroups());
   
-   
-   
-  });
+  },[dispatch]);
     return(
         <div className="layout-centered">
           <h2 className="tagline">Find a group you like.</h2>  
